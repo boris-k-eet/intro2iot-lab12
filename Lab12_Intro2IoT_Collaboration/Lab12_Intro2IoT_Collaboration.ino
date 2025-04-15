@@ -18,7 +18,8 @@ void setup() {
 void loop() {
   isDark = isRoomDark();             // Light detection logic
   isButtonOn = isButtonActivated();  // Button-based manual override
-
+  Serial.print("Dark? (0 - no, 1 - yes): ");
+  Serial.println(isDark);
   // Control the LED
   if (isDark || isButtonOn) {
     digitalWrite(ledPin, HIGH);
@@ -39,9 +40,8 @@ bool isRoomDark() {
   Serial.println(lightLevel);
 
   // TODO: Fix this logic so it returns true when it's dark
-  return false; // <-- incorrect for now
+  return (lightLevel < darkThreshold); 
 }
-
 // ===============================
 // Manual Switch Control – Student 2
 bool isButtonActivated() {
