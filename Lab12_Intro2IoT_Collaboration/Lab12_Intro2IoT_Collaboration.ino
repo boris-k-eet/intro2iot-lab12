@@ -18,7 +18,8 @@ void setup() {
 void loop() {
   isDark = isRoomDark();             // Light detection logic
   isButtonOn = isButtonActivated();  // Button-based manual override
-  
+  Serial.print("Dark? (0 - no, 1 - yes): ");
+  Serial.println(isDark);
   // Control the LED
   if (isDark || isButtonOn) {
     digitalWrite(ledPin, HIGH);
