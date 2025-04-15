@@ -42,6 +42,7 @@ bool isRoomDark() {
   // TODO: Fix this logic so it returns true when it's dark
   return (lightLevel < darkThreshold); 
 }
+
 // ===============================
 // Manual Switch Control – Student 2
 bool isButtonActivated() {
